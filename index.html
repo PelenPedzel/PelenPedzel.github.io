@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-      <title>Pełen Pędzel</title>
+<title>Pełen Pędzel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
@@ -51,8 +51,7 @@ a {
 <body>
 <div class="container">
 <h1>Pełen Pędzel</h1>
-<img src="https://PelenPedzel.github.io/Człowiek malowany od nowa PelenPedzel.GitHub.io.png" alt="Pełen Pędzel" width="300">
-<br>
+
 <p>
 Nie jestem guru ani mentorem. Nie sprzedaję złotych recept ani gotowych odpowiedzi. 
 Jestem zwyczajnym wieśniakiem, który kilka razy koncertowo zjebał własne życie i nie ma zamiaru udawać, że było inaczej.
@@ -77,6 +76,66 @@ Bez skrótów. Bez iluzji łatwej drogi.
 Jest proces, praca i odpowiedzialność. I świadomość, że zmiana nie dzieje się w jednej decyzji – dzieje się codziennie.
 </p>
 
+<!-- Kontener do miniatury YouTube -->
+<style>
+  .youtube-thumb {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    cursor: pointer;
+  }
+  .youtube-thumb img {
+    width: 100%;
+    display: block;
+  }
+  .youtube-thumb .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72px;
+    height: 72px;
+    background: url('https://img.icons8.com/ios-glyphs/90/ffffff/play--v1.png') no-repeat center;
+    background-size: 72px 72px;
+    pointer-events: none;
+  }
+</style>
+
+<div id="yt-container"></div>
+
+<script>
+  // ID filmy YT z linku: https://youtu.be/6OrKhW2CG3Y
+  const videoId = "6OrKhW2CG3Y";
+
+  // URL miniaturki (wysoka jakość)
+  const thumbUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+  // Kontener
+  const container = document.getElementById("yt-container");
+
+  // Dodaj miniaturę
+  container.innerHTML = `
+    <div class="youtube-thumb" id="thumb-${videoId}">
+      <img src="${thumbUrl}" alt="Podcast Jerzy Zieliński Thumbnail">
+      <div class="play-btn"></div>
+    </div>
+  `;
+
+  // Po kliknięciu zamień miniaturę na iframe
+  document.getElementById(`thumb-${videoId}`).addEventListener("click", function() {
+    container.innerHTML = `
+      <iframe width="100%" height="360"
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+        title="Podcast u Jerzego Zielińskiego"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    `;
+  });
+</script>
+
+
 <div class="section">
 <h2>Po co mi to wszystko?</h2>
 <p>
@@ -97,7 +156,11 @@ twarzą w twarz z własnym życiem i spróbować zbudować je od nowa.
 <div class="section">
 <h2>Książka</h2>
 <p>
+<img src="https://PelenPedzel.github.io/Człowiek malowany od nowa PelenPedzel.GitHub.io.png" alt="Pełen Pędzel" width="300">
+<br>
+      
 <b>"Człowiek malowany od nowa"</b><br>
+      
 Szczera historia bez happy endu i bez obietnic.
 To nie jest książka, która poprawia nastrój.
 To jest książka dla ludzi, którzy działają, funkcjonują, ogarniają,
@@ -119,14 +182,22 @@ To lektura dla tych, którzy:
 
 </p>
 <p>
-<a href="https://www.amazon.pl/dp/B0GKFW62NM" target="_blank">Kup książkę na Amazon</a>
+<a href="https://www.amazon.pl/dp/B0GKFW62NM" target="_blank">Amazon miękka oprawa</a>
+</p>
+<p>
+<a href="https://www.amazon.pl/Czlowiek-malowany-Damian-Mateusz-D%C4%85browski/dp/B0GKNL4YQH/ref=tmm_hrd_swatch_0" target="_blank">Amazon twarda oprawa</a>
 </p>
 </p>
 <p>
-<a href="https://www.empik.com/czlowiek-malowany-od-nowa-dabrowski-damian-mateusz,p1706376967,ebooki-i-mp3-p?msockid=1203d3fbb70b6a7229edc65db6236bfd" target="_blank">Kup książkę na Empik</a>
+<a href="https://www.empik.com/czlowiek-malowany-od-nowa-dabrowski-damian-mateusz,p1712973813,ksiazka-p" target="_blank">Empik miękka oprawa</a>
+</p>
+<p>
+<a href="https://www.empik.com/czlowiek-malowany-od-nowa-dabrowski-damian-mateusz,p1706376967,ebooki-i-mp3-p?msockid=1203d3fbb70b6a7229edc65db6236bfd" target="_blank">Empik PDF</a>
 </p>
 </div>
-<p><strong>Kupiłeś książkę?</strong> 
+      
+<p>
+<strong>Kupiłeś książkę?</strong>
 Dziękuję za zaufanie i jednocześnie mam dla Ciebie Bonus!
 Ten fragment wxale nie powinien był powstać. Jednak widocznie wszysto tak się złożyło,
 że w obiecany Piątek 13-tego Empik nie wypuścił książki z powodu braku jednej strony do druku.
@@ -137,8 +208,7 @@ Trudno - Ten fragment jest zupełnie inny od całości.
 Nie każde wydanie będzię zawierało tę klątwę 
 dlatego zostawiam ją poniżej...</p>
 
-<br>
-<a href="Extra Chapter.pdf" download style="display:inline-block;margin-top:10px;padding:10px 
+<br><a href="Extra Chapter.pdf" download style="display:inline-block;margin-top:10px;padding:10px 
 20px;background:#000;color:#fff;text-decoration:none;border-radius:6px;">
 Manifest Extra PDF
 </a>
@@ -222,37 +292,6 @@ Tu się wyrażasz tak jak uważasz.
 <script type="text/javascript"
         src="https://LDS777.myspreadshop.pl/shopfiles/shopclient/shopclient.nocache.js">
 </script>
-
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Podcast Jerzy Zieliński – Pewna Terapia</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-    .container { max-width: 800px; margin: auto; }
-    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-    .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
-    h1, h2 { color: #333; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Podcas</h1>
-
-    <!-- Osadzone wideo z YouTube -->
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/6OrKhW2CG3Y" 
-        title="Podcast z Jerzym Zielińskim i Pewna Terapia"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
 
 <section class="review-lds">
 <h2> Firma w Google </h2>
