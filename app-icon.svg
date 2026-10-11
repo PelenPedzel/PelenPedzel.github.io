@@ -1,11 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#090909"/>
-  <circle cx="256" cy="256" r="218" fill="none" stroke="#9b6b35" stroke-width="8"/>
-  <circle cx="256" cy="256" r="198" fill="none" stroke="#d9b477" stroke-width="3"/>
-  <path d="M256 25 294 218 487 256 294 294 256 487 218 294 25 256 218 218Z" fill="#c99b58" stroke="#f1dfbd" stroke-width="5" stroke-linejoin="round"/>
-  <circle cx="256" cy="256" r="27" fill="#090909" stroke="#f1dfbd" stroke-width="8"/>
-  <path d="M112 177 Q112 151 139 151 H194 Q220 151 220 180 V219 Q220 239 200 248 Q220 258 220 280 V330 Q220 359 191 359 H116 V325 H183 V291 H136 V259 H183 V185 H145 V210 H112Z" fill="#f0e4ce" stroke="#9b6b35" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M400 177 Q400 151 373 151 H318 Q292 151 292 180 V219 Q292 239 312 248 Q292 258 292 280 V330 Q292 359 321 359 H396 V325 H329 V291 H376 V259 H329 V185 H367 V210 H400Z" fill="#f0e4ce" stroke="#9b6b35" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M113 381 H399" stroke="#c99b58" stroke-width="4"/>
-  <text x="256" y="423" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="43" letter-spacing="8" fill="#f0e4ce">1991</text>
+  <title>The 13Th Moon Universe</title>
+  <rect width="512" height="512" rx="88" fill="#090909"/>
+  <g fill="none" stroke="#fffaf0" stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="256" cy="256" r="222" stroke-width="10"/>
+    <circle cx="256" cy="256" r="208" stroke-width="3"/>
+  </g>
+  <path d="M322 66C202 74 118 166 118 274c0 99 73 174 164 174 51 0 96-23 126-60-25 13-51 19-78 19-98 0-174-77-174-175 0-70 40-132 101-166 19-10 40-17 65-20Z" fill="#fffaf0" stroke="#090909" stroke-width="8" stroke-linejoin="round"/>
+  <g fill="#090909">
+    <circle cx="171" cy="193" r="18"/><circle cx="151" cy="278" r="11"/><circle cx="202" cy="350" r="14"/>
+  </g>
+  <g fill="none" stroke="#fffaf0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 27v30M241 42h30M256 455v30M241 470h30M27 256h30M42 241v30M455 256h30M470 241v30"/>
+  </g>
+  <path d="M236 148h64c22 0 34 15 34 36v28c0 20-9 31-25 39 18 8 27 21 27 43v48c0 29-17 45-46 45h-73v-43h66v-38h-45v-40h45v-36h-47v25h-42v-68c0-24 15-39 42-39Z" fill="#090909" stroke="#fffaf0" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M210 165h-20v-39h61v250h-45V165Z" fill="#090909" stroke="#fffaf0" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M182 408h148" stroke="#fffaf0" stroke-width="5" stroke-linecap="round"/>
 </svg>
