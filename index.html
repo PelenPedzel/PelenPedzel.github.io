@@ -65,41 +65,5 @@
 <script>
 (function(){const button=document.getElementById("install-app");const help=document.getElementById("install-help");let installPrompt=null;if(button){window.addEventListener("beforeinstallprompt",function(event){event.preventDefault();installPrompt=event;button.textContent="☾ Zainstaluj The 13Th Moon Universe";});button.addEventListener("click",async function(){if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;}else if(help){help.hidden=!help.hidden;}});window.addEventListener("appinstalled",function(){button.textContent="The 13Th Moon Universe dodano";button.disabled=true;if(help)help.hidden=true;});}if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("./service-worker.js").catch(function(error){console.warn("PWA service worker registration failed",error);});});}})();
 </script>
-<script>
-(function(){
-  const triggers=document.querySelectorAll(".ebook-form-trigger");
-  if(!triggers.length)return;
-  function loadMailerLite(){
-    return new Promise((resolve,reject)=>{
-      if(typeof window.ml==="function"){resolve();return;}
-      const existing=document.querySelector('script[src*="assets.mailerlite.com/js/universal.js"]');
-      if(existing){
-        existing.addEventListener("load",()=>typeof window.ml==="function"?resolve():reject(new Error("MailerLite unavailable")),{once:true});
-        existing.addEventListener("error",()=>reject(new Error("MailerLite load failed")),{once:true});
-        setTimeout(()=>typeof window.ml==="function"?resolve():reject(new Error("MailerLite timeout")),5000);
-        return;
-      }
-      const s=document.createElement("script");
-      s.src="https://assets.mailerlite.com/js/universal.js";s.async=true;
-      s.onload=()=>typeof window.ml==="function"?resolve():reject(new Error("MailerLite unavailable"));
-      s.onerror=()=>reject(new Error("MailerLite load failed"));
-      document.head.appendChild(s);
-    });
-  }
-  triggers.forEach(button=>{
-    button.addEventListener("click",async()=>{
-      const status=button.parentElement.querySelector(".ebook-form-status")||button.nextElementSibling;
-      button.disabled=true;
-      try{
-        await loadMailerLite();
-        window.ml("show","hcWIlg",true);
-        if(status){status.hidden=true;status.textContent="";}
-      }catch(error){
-        if(status){status.hidden=false;status.textContent="Formularz zapisu nie załadował się. Odśwież stronę i spróbuj ponownie.";}
-        console.error("Nie udało się otworzyć formularza e-booka:",error);
-      }finally{button.disabled=false;}
-    });
-  });
-})();
-</script></body>
+</body>
 </html>
