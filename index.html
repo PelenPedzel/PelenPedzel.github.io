@@ -42,7 +42,7 @@
 <p><button type="button" class="button" id="install-app">☾ Zainstaluj The 13Th Moon Universe</button></p>
 <p id="install-help" hidden style="max-width:680px;margin:1rem auto;color:#aaa;font-size:.9rem">Android: w menu Chrome wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”. iPhone: w Safari wybierz Udostępnij → „Do ekranu początkowego”. Na komputerze użyj ikony instalacji w pasku adresu, jeśli jest dostępna.</p>
 </section>
-<section id="bezplatny-ebook" class="section"><div class="wrap center"><p class="eyebrow">NA DOBRY POCZĄTEK</p><h2>„Człowiek malowany od nowa” — bezpłatny e-book</h2><p class="section-intro" style="margin:0 auto 1.5rem">Krótki materiał na początek drogi. Bez obietnic cudów i gotowych recept — osobista perspektywa, która może pomóc zatrzymać się i przyjrzeć własnej historii. Po zapisie otrzymasz wiadomość z dostępem do e-booka.</p><button type="button" class="button ebook-form-trigger">Odbierz bezpłatny e-book</button><p style="color:#bbb;font-size:.9rem;margin:1rem auto 0;max-width:720px">Wysłanie prośby o e-book i zgoda na marketing to dwie odrębne sprawy. <a href="polityka-prywatnosci.html">Przeczytaj politykę prywatności</a> oraz <a href="polityka-prywatnosci.html#ebook">informację o danych przy odbiorze e-booka</a>. Opcjonalną zgodę marketingową zaznaczysz osobno w formularzu.</p></div></section>
+<section id="bezplatny-ebook" class="section"><div class="wrap center"><p class="eyebrow">NA DOBRY POCZĄTEK</p><h2>„Człowiek malowany od nowa” — bezpłatny e-book</h2><p class="section-intro" style="margin:0 auto 1.5rem">Krótki materiał na początek drogi. Bez obietnic cudów i gotowych recept — osobista perspektywa, która może pomóc zatrzymać się i przyjrzeć własnej historii. Po zapisie otrzymasz wiadomość z dostępem do e-booka.</p><a class="button ebook-form-trigger" href="https://preview.mailerlite.io/forms/2517374/200982745660261620/share" target="_blank" rel="noopener noreferrer">Odbierz bezpłatny e-book</a><p style="color:#bbb;font-size:.9rem;margin:1rem auto 0;max-width:720px">Wysłanie prośby o e-book i zgoda na marketing to dwie odrębne sprawy. <a href="polityka-prywatnosci.html">Przeczytaj politykę prywatności</a> oraz <a href="polityka-prywatnosci.html#ebook">informację o danych przy odbiorze e-booka</a>. Opcjonalną zgodę marketingową zaznaczysz osobno w formularzu.</p></div></section>
 <section id="uniwersum" class="section"><div class="wrap"><h2>Co znajdziesz w tym świecie?</h2><p class="section-intro">Pełen Pędzel to twórca, a The 13Th Moon Universe to rozwijany świat artystyczny. Każda część ma własny charakter, ale łączy je opowieść o doświadczeniu, emocjach i zmianie.</p><div class="grid">
 <article class="card"><div class="moon">📖</div><h3>Książka</h3><p><em>Człowiek malowany od nowa</em> — osobista opowieść o doświadczeniu, uzależnieniu i zmianie. To świadectwo, nie uniwersalna instrukcja dla każdego.</p><a href="ksiazka.html">Poznaj książkę →</a></article>
 <article class="card"><div class="moon">🎵</div><h3>Muzyka</h3><p><em>Dark Days</em>, <em>Bright Days</em> i <em>Heart Core</em> — trzy odsłony drogi przez trudne doświadczenia, odzyskiwanie światła i poznawanie siebie.</p><a href="muzyka.html">Poznaj albumy i posłuchaj →</a></article>
@@ -66,20 +66,6 @@
 (function(){const button=document.getElementById("install-app");const help=document.getElementById("install-help");let installPrompt=null;if(button){window.addEventListener("beforeinstallprompt",function(event){event.preventDefault();installPrompt=event;button.textContent="☾ Zainstaluj The 13Th Moon Universe";});button.addEventListener("click",async function(){if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;}else if(help){help.hidden=!help.hidden;}});window.addEventListener("appinstalled",function(){button.textContent="The 13Th Moon Universe dodano";button.disabled=true;if(help)help.hidden=true;});}if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("./service-worker.js").catch(function(error){console.warn("PWA service worker registration failed",error);});});}})();
 </script>
 
-<script>
-(function(){
-  const triggers=document.querySelectorAll(".ebook-form-trigger");
-  if(!triggers.length)return;
-  triggers.forEach(function(button){
-    button.addEventListener("click",function(){
-      if(typeof window.ml!=="function"){
-        console.error("MailerLite nie został załadowany.");
-        return;
-      }
-      window.ml("show","hcWIlg",true);
-    });
-  });
-})();
-</script>
+
 </body>
 </html>
