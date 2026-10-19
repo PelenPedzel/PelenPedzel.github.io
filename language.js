@@ -385,6 +385,38 @@
   "Rozwój w przyszłości": "Future development",
   "Pełen Pędzel · Uniwersum 13th Moon · Damian Dąbrowski": "Pełen Pędzel · 13th Moon Universe · Damian Dąbrowski"
 });
+  Object.assign(translations, {
+  "Odbierz bezpłatny e-book": "Get the free e-book",
+  "— trzy odsłony drogi przez trudne doświadczenia, odzyskiwanie światła i poznawanie siebie.": "— three stages of a journey through difficult experiences, finding light again and discovering oneself.",
+  "LDS777 — sklep": "LDS777 — shop",
+  "Zobacz": "Read",
+  "politykę prywatności": "the privacy policy",
+  ". Zgoda marketingowa jest opcjonalna i oddzielna.": ". Marketing consent is optional and separate.",
+  "/ O mnie": "/ About me",
+  "/ Książka": "/ Book",
+  "/ Muzyka": "/ Music",
+  "/ Oficjalne informacje": "/ Official information",
+  "/ Mapa Galaktyki": "/ Galaxy Map",
+  "/ 13TH Moon": "/ 13TH Moon",
+  "UNIWERSUM": "UNIVERSE",
+  "🦉 Sowa": "🦉 Owl",
+  "🌳 Dąb": "🌳 Oak",
+  "🔥 Ogień": "🔥 Fire",
+  "🖌️ Pędzel": "🖌️ Paintbrush",
+  "🌙 Księżyc": "🌙 Moon",
+  "🛤️ Droga": "🛤️ Path",
+  "Wieśniacze Opowieści Pyndzla": "Pyndzel’s Village Tales",
+  "Dark Days · Bright Days · Heart Core — istniejąca warstwa muzyczna.": "Dark Days · Bright Days · Heart Core — the existing musical layer.",
+  "Pyndzel": "Pyndzel",
+  "Umbra Mind": "Umbra Mind",
+  "Koncepcja": "Concept",
+  "Damian Mateusz Dąbrowski / Pełen Pędzel": "Damian Mateusz Dąbrowski / Pełen Pędzel",
+  "Pełen Pędzel | The 13Th Moon Universe — oficjalne informacje": "Pełen Pędzel | The 13Th Moon Universe — official information",
+  "Pełen Pędzel — Dark Days, Bright Days i Heart Core | Muzyka": "Pełen Pędzel — Dark Days, Bright Days and Heart Core | Music",
+  "LDS777 — autorskie wzory i sklep Pełnego Pędzla": "LDS777 — original designs and Pełen Pędzel shop",
+  "Człowiek malowany od nowa — książka Damiana Dąbrowskiego": "Człowiek malowany od nowa — a book by Damian Dąbrowski",
+  "The 13Th Moon Universe — uniwersum Pełnego Pędzla": "The 13Th Moon Universe — the world of Pełen Pędzel"
+});
   const pageMeta = {
     'index.html': { title: 'Pełen Pędzel — Damian Dąbrowski | Book, music and art', description: 'The official Pełen Pędzel website: book, music, original artwork and The 13Th Moon Universe.' },
     'o-mnie.html': { title: 'About me | Pełen Pędzel — Damian Mateusz Dąbrowski', description: 'Meet Damian Mateusz Dąbrowski, creating as Pełen Pędzel. About the creator, his book, music and The 13Th Moon Universe.' },
