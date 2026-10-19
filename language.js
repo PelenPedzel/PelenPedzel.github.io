@@ -1,0 +1,192 @@
+/* Shared Polish / English language switcher for the Pełen Pędzel website. */
+(function () {
+  'use strict';
+  const STORAGE_KEY = 'pelenpedzel-language';
+  const translations = {
+  "O mnie": "About me",
+  "Uniwersum": "Universe",
+  "Książka": "Book",
+  "Muzyka": "Music",
+  "Oficjalne informacje": "Official information",
+  "Oficjalne profile": "Official profiles",
+  "Strona główna": "Home",
+  "Poznaj książkę": "Discover the book",
+  "Posłuchaj muzyki": "Listen to the music",
+  "Odwiedź LDS777": "Visit LDS777",
+  "Poznaj Uniwersum": "Discover the Universe",
+  "Poznaj książkę →": "Discover the book →",
+  "Słuchaj →": "Listen →",
+  "Odwiedź sklep →": "Visit the shop →",
+  "O projekcie →": "About the project →",
+  "AUTOR · TWÓRCA": "AUTHOR · CREATOR",
+  "Nazywam się Damian Mateusz Dąbrowski. Tworzę jako Pełen Pędzel. Łączę słowo, muzykę i sztukę, rozwijając The 13Th Moon Universe.": "My name is Damian Mateusz Dąbrowski, and I create as Pełen Pędzel. I bring words, music and art together while developing The 13Th Moon Universe.",
+  "Dlaczego tworzę?": "Why do I create?",
+  "Interesuje mnie człowiek i możliwość zmiany — bez udawania, że istnieją proste odpowiedzi na trudne pytania. Książka, muzyka i obrazy są dla mnie różnymi sposobami opowiadania o doświadczeniu, emocjach, odpowiedzialności i szukaniu własnej drogi.": "I am interested in people and the possibility of change, without pretending that difficult questions have simple answers. Books, music and images are different ways for me to tell stories about experience, emotions, responsibility and finding your own path.",
+  "jest jednym z fundamentów tego świata. Muzyczne albumy": "is one of the foundations of this world. The music albums",
+  "rozwijają te tematy w dźwięku. The 13Th Moon Universe łączy te ścieżki w większą opowieść.": "explore these themes through sound. The 13Th Moon Universe brings these paths together into a larger story.",
+  "Nie chcę występować w roli kogoś, kto ma gotową receptę dla innych. Wolę dzielić się twórczością i zostawiać odbiorcy przestrzeń na własne wnioski.": "I do not want to present myself as someone with ready-made answers for others. I prefer to share my work and leave room for people to draw their own conclusions.",
+  "Rozmowa z Jerzym Zielińskim": "Conversation with Jerzy Zieliński",
+  "Jeśli chcesz poznać mnie bliżej, obejrzyj rozmowę na YouTube.": "If you would like to get to know me better, watch the conversation on YouTube.",
+  "Obejrzyj rozmowę na YouTube": "Watch the conversation on YouTube",
+  "Moje projekty": "My projects",
+  "Historia i punkt wyjścia do dalszej twórczości.": "A story and the starting point for further creative work.",
+  "Posłuchaj muzyki →": "Listen to the music →",
+  "Rozwijany świat symboli, opowieści i sztuki.": "A developing world of symbols, stories and art.",
+  "Sklep z autorskimi projektami.": "A shop featuring original designs.",
+  "Bezpłatny e-book": "Free e-book",
+  "Chcesz zacząć od materiału wprowadzającego? Odbierz bezpłatny e-book „Człowiek malowany od nowa — Zanim zaczniesz od nowa”.": "Would you like to start with an introductory resource? Get the free e-book “Człowiek malowany od nowa — Zanim zaczniesz od nowa”.",
+  "Odbieram darmowy e-book": "Get the free e-book",
+  "13TH Moon": "13TH Moon",
+  "Nie jest zwykłą marką ani pojedynczą książką. To uniwersum twórcze powstałe z pytań o człowieka, tożsamość, przemianę, cień i sens własnej drogi.": "It is not an ordinary brand or a single book. It is a creative universe born from questions about people, identity, transformation, shadow and the meaning of one’s own path.",
+  "Trzynasty Księżyc": "The Thirteenth Moon",
+  "Dwanaście księżyców reprezentuje próby człowieka: strach, samotność, pamięć, miłość, odpowiedzialność, twórczość i inne etapy rozwoju. Trzynasty Księżyc symbolizuje moment wyjścia poza gotowe odpowiedzi i odnalezienie własnej drogi.": "The twelve moons represent human challenges: fear, loneliness, memory, love, responsibility, creativity and other stages of growth. The Thirteenth Moon symbolises moving beyond ready-made answers and finding your own path.",
+  "Nie dostajesz tu gotowej recepty. Dostajesz przestrzeń do własnej odpowiedzi.": "You will not find ready-made answers here. You will find space to discover your own.",
+  "Symbole": "Symbols",
+  "Mądrość i obserwacja.": "Wisdom and observation.",
+  "Korzenie i wytrwałość.": "Roots and perseverance.",
+  "Przemiana.": "Transformation.",
+  "Tworzenie nowej wersji siebie.": "Creating a new version of yourself.",
+  "Cykle życia.": "The cycles of life.",
+  "Indywidualna podróż człowieka.": "A person’s individual journey.",
+  "Filary Uniwersum": "Pillars of the Universe",
+  "Książki": "Books",
+  "Audiobooki": "Audiobooks",
+  "Sztuka i ilustracje": "Art and illustrations",
+  "Społeczność": "Community",
+  "Symbolika 13th Moon": "13th Moon symbolism",
+  "LDS777 i przedmioty związane ze światem": "LDS777 and objects from this world",
+  "PIERWSZA BRAMA": "THE FIRST GATE",
+  "Szczera historia bez happy endu i bez obietnic. Fundament Uniwersum 13th Moon — opowieść o człowieku, który próbuje rozpocząć życie od nowa.": "An honest story without a happy ending or promises. The foundation of the 13th Moon Universe — the story of a person trying to start life anew.",
+  "O książce": "About the book",
+  "To nie jest książka, która daje gotowe recepty. Jest konfrontacją z przeszłością, gniewem, wiarą, sensem i myślami, które naprawdę kształtują rzeczywistość.": "This is not a book of ready-made answers. It is a confrontation with the past, anger, faith, meaning and the thoughts that shape reality.",
+  "To lektura dla tych, którzy mają dość udawania przed sobą i wolą prawdę bez pocieszenia niż pocieszenie bez prawdy.": "It is for those who are tired of pretending to themselves and would rather have truth without comfort than comfort without truth.",
+  "Amazon PL": "Amazon Poland",
+  "Amazon EN": "Amazon English",
+  "BEZPŁATNY MATERIAŁ": "FREE RESOURCE",
+  "Zanim namalujesz siebie od nowa…": "Before you paint yourself anew…",
+  "Zacznij od bezpłatnego e-booka wprowadzającego do świata Pełnego Pędzla. Zapisz się przez formularz, a dostęp do pliku otrzymasz w wiadomości e-mail.": "Start with a free e-book introducing the world of Pełen Pędzel. Sign up using the form and you will receive access to the file by email.",
+  "Manifest": "Manifest",
+  "Fragment powstały w związku z historią pierwszego wydania książki.": "An excerpt connected with the story behind the book’s first edition.",
+  "Manifest PDF": "Manifest PDF",
+  "ŚCIEŻKA DŹWIĘKOWA": "SOUNDTRACK",
+  "Muzyka powstała jako naturalne uzupełnienie książki. Niektórych rzeczy nie da się wyrazić wyłącznie zdaniem — potrzebują rytmu, ciszy między wersami i emocji.": "The music grew naturally alongside the book. Some things cannot be expressed through words alone — they need rhythm, silence between lines and emotion.",
+  "Etap cienia i doświadczeń.": "A stage of shadow and experience.",
+  "Etap ruchu w stronę światła.": "A step towards the light.",
+  "Warstwa serca i wewnętrznego rdzenia.": "The layer of the heart and inner core.",
+  "Słuchaj": "Listen",
+  "MATERIALNY WYMIAR UNIWERSUM": "THE MATERIAL SIDE OF THE UNIVERSE",
+  "Autorska marka graficzna oparta na symbolice, przekazie i świadomym designie. Grafika nie jest tu przypadkowym dodatkiem — jest częścią historii.": "An original graphic brand built around symbolism, meaning and thoughtful design. Graphics are not an incidental extra here — they are part of the story.",
+  "Wejdź do sklepu": "Enter the shop",
+  "LDS777 w 13th Moon": "LDS777 in 13th Moon",
+  "Sklep jest materialnym wymiarem świata: symbole, ilustracje i przedmioty pozwalają przenieść elementy Uniwersum poza ekran i książkę.": "The shop is the material side of this world: symbols, illustrations and objects bring elements of the Universe beyond the screen and the book.",
+  "Kolekcja powiązana z muzyczną warstwą Uniwersum.": "A collection connected with the musical side of the Universe.",
+  "Drugi etap muzycznej i wizualnej podróży.": "The second stage of the musical and visual journey.",
+  "Motywy, które mogą funkcjonować jako znaki rozpoznawcze świata 13th Moon.": "Motifs that can become recognisable symbols of the 13th Moon world.",
+  "Ważne": "Important",
+  "LDS777 nie jest osobnym światem obok Pełnego Pędzla. Jest jednym z jego filarów i będzie rozwijany razem z książką, muzyką, sztuką i Uniwersum 13th Moon.": "LDS777 is not a separate world beside Pełen Pędzel. It is one of its pillars and will develop alongside the book, music, art and the 13th Moon Universe.",
+  "OFFICIAL ONLINE PRESENCE": "OFFICIAL ONLINE PRESENCE",
+  "Oficjalna strona internetowa projektu Pełen Pędzel. To centrum informacji o autorze, książce, muzyce, LDS777 i rozwijanym Uniwersum.": "The official website of the Pełen Pędzel project. This is the central source of information about the creator, book, music, LDS777 and the developing Universe.",
+  "Pełen Pędzel — oficjalne informacje": "Pełen Pędzel — official information",
+  "to autorski projekt Damiana Mateusza Dąbrowskiego.": "is the creative project of Damian Mateusz Dąbrowski.",
+  "jest rozwijanym światem twórczym, którego fundamentem jest książka „Człowiek malowany od nowa”, a obecne elementy obejmują także muzykę oraz markę LDS777.": "is a developing creative universe founded on the book “Człowiek malowany od nowa”, with music and the LDS777 brand as its current elements.",
+  "Ta strona służy jako jednoznaczny punkt odniesienia dla osób, które szukają projektu w Google, mediach społecznościowych lub innych serwisach.": "This website is a clear reference point for people looking for the project on Google, social media or other services.",
+  "Google — bezpośrednie profile / informacje": "Google — direct profiles / information",
+  "To są dwa odnośniki Google przekazane dla projektu. Umieszczam je tutaj jako bezpośrednie adresy, bez przekierowania przez stronę główną.": "These are the two Google links provided for the project. They are listed here as direct addresses, without redirecting through the homepage.",
+  "Otwórz profil Google →": "Open Google profile →",
+  "Otwórz drugi odnośnik Google →": "Open the second Google link →",
+  "Oficjalne profile i serwisy": "Official profiles and services",
+  "Materiały wideo i rozmowy.": "Videos and conversations.",
+  "Oficjalna muzyka projektu.": "The project’s official music.",
+  "Muzyka i materiały audio.": "Music and audio content.",
+  "Warstwa wizualna i LDS777.": "Visual content and LDS777.",
+  "Profil zawodowy i projektowy.": "Professional and project profile.",
+  "Bezpośredni kanał kontaktu.": "Direct contact channel.",
+  "Oficjalny sklep z autorskimi projektami.": "Official shop for original designs.",
+  "Otwórz YouTube →": "Open YouTube →",
+  "Profil Spotify →": "Spotify profile →",
+  "Profil SoundCloud →": "SoundCloud profile →",
+  "Profil Pinterest →": "Pinterest profile →",
+  "Profil LinkedIn →": "LinkedIn profile →",
+  "Telegram →": "Telegram →",
+  "Informacja dla Google": "Information for Google",
+  "Oficjalna domena:": "Official domain:",
+  "Autor / twórca:": "Author / creator:",
+  "Projekt:": "Project:",
+  "Główne obszary:": "Main areas:",
+  "Strona jest oficjalnym centrum informacji online projektu. Nie przedstawiamy jej jako fizycznej lokalizacji firmy ani jako adresu sklepu stacjonarnego.": "This website is the project’s official online information hub. It is not presented as a physical business location or a brick-and-mortar shop address.",
+  "Kontakt": "Contact",
+  "W sprawach dotyczących projektu najprościej skorzystać z Telegrama lub oficjalnych profili wymienionych powyżej.": "For project-related enquiries, the easiest option is to use Telegram or one of the official profiles listed above.",
+  "Skontaktuj się przez Telegram": "Contact via Telegram",
+  "Znajdź Pełen Pędzel w Google": "Find Pełen Pędzel on Google",
+  "Jeżeli szukasz projektu poza stroną autorską, poniżej są bezpośrednie odnośniki Google przekazane dla profilu projektu.": "If you are looking for the project beyond this website, below are the direct Google links provided for the project profile.",
+  "Profil Google": "Google profile",
+  "Google — drugi odnośnik": "Google — second link",
+  "Drugi przekazany adres Google do profilu/informacji.": "The second Google address provided for the profile/information.",
+  "Znajdź Pełen Pędzel poza tą stroną": "Find Pełen Pędzel beyond this website",
+  "Oficjalne profile i miejsca, w których projekt jest obecny.": "Official profiles and places where the project is present.",
+  "Otwórz Spotify →": "Open Spotify →",
+  "Otwórz SoundCloud →": "Open SoundCloud →",
+  "Otwórz Pinterest →": "Open Pinterest →",
+  "Otwórz LinkedIn →": "Open LinkedIn →",
+  "Otwórz Telegram →": "Open Telegram →",
+  "Dlaczego to robię?": "Why do I do this?",
+  "Projekt powstał z przekonania, że człowiek może się zmieniać. Nie chodzi o budowanie kultu autora ani o gotowe recepty. Chodzi o przestrzeń, w której odbiorca może odzyskiwać sprawczość poprzez wiedzę, sztukę, przedsiębiorczość i codzienne działanie.": "The project grew from the belief that people can change. It is not about building a cult of personality or offering ready-made answers. It is about creating space for people to regain agency through knowledge, art, entrepreneurship and everyday action.",
+  "Fundamentem są prawda, odpowiedzialność, szacunek, rozwój, pokora, odwaga, wolność połączona z odpowiedzialnością, współpraca, kreatywność i służba drugiemu człowiekowi.": "Its foundations are truth, responsibility, respect, growth, humility, courage, freedom paired with responsibility, cooperation, creativity and service to others.",
+  "PIERWSZY KROK": "THE FIRST STEP",
+  "Odbierz bezpłatny e-book „Człowiek malowany od nowa — Zanim zaczniesz od nowa”. Bez obietnic cudów i gotowych recept. Po zapisie wyślemy Ci wiadomość z dostępem do materiału.": "Get the free e-book “Człowiek malowany od nowa — Zanim zaczniesz od nowa”. No miracle promises or ready-made answers. After signing up, we will email you access to the resource.",
+  "The 13Th Moon Universe": "The 13Th Moon Universe",
+  "13th Moon nie jest zwykłą marką ani pojedynczą książką. Jest rozwijanym światem twórczym. Na dziś pokazujemy przede wszystkim to, co naprawdę istnieje.": "13th Moon is not an ordinary brand or a single book. It is a developing creative world. For now, we focus on what genuinely exists.",
+  "Istniejąca książka i fundament narracyjny projektu.": "The existing book and narrative foundation of the project.",
+  "Działający sklep i materialny wymiar marki.": "An active shop and the material side of the brand.",
+  "Rozwijany świat, który będzie odsłaniany etapami.": "A developing world that will be revealed in stages.",
+  "Książka, muzyka, sztuka i LDS777 tworzą dziś fundament rozwijanego świata twórczego.": "Books, music, art and LDS777 form the foundation of this developing creative world.",
+  "Nie wszystkie księżyce widoczne są na niebie.": "Not all moons are visible in the sky.",
+  "Nie wszystkie drogi można odnaleźć na mapie.": "Not every path can be found on a map.",
+  "Czasem człowiek musi namalować siebie od nowa.": "Sometimes a person must paint themselves anew."
+};
+  const pageMeta = {
+    'index.html': { title: 'Pełen Pędzel | The 13Th Moon Universe — book, music, LDS777', description: 'The official Pełen Pędzel and The 13Th Moon Universe website. Book, music, LDS777, art and a developing creative world.' },
+    'o-mnie.html': { title: 'About me | Pełen Pędzel — Damian Mateusz Dąbrowski', description: 'Meet Damian Mateusz Dąbrowski, creating as Pełen Pędzel. About the creator, his book, music and The 13Th Moon Universe.' },
+    '13th-moon.html': { title: '13TH Moon | Pełen Pędzel Universe', description: '13TH Moon — the Pełen Pędzel creative universe about people, transformation, shadow, symbols, music and finding your own path.' },
+    'ksiazka.html': { title: 'Człowiek malowany od nowa | Pełen Pędzel', description: 'Człowiek malowany od nowa — a book by Damian Mateusz Dąbrowski and the foundation of the 13th Moon Universe.' },
+    'muzyka.html': { title: 'Music | Dark Days · Bright Days · Heart Core | Pełen Pędzel', description: 'Pełen Pędzel music — Dark Days, Bright Days and Heart Core. Three stages of the 13th Moon Universe emotional journey.' },
+    'lds777.html': { title: 'LDS777 | Official shop of the 13th Moon Universe', description: 'LDS777 — the official Pełen Pędzel shop and material side of the 13th Moon Universe. Original graphics, symbols and print-on-demand collections.' },
+    'google-business.html': { title: 'Pełen Pędzel | The 13Th Moon Universe — official information', description: 'Official information about Pełen Pędzel and The 13Th Moon Universe: book, music, LDS777, creative work and official profiles.' }
+  };
+  function currentFile() { return location.pathname.split('/').pop() || 'index.html'; }
+  function applyLanguage(language) {
+    const english = language === 'en';
+    document.documentElement.lang = english ? 'en' : 'pl';
+    document.querySelectorAll('[data-language-toggle]').forEach(function (button) {
+      button.textContent = english ? 'PL · Polski' : 'EN · English';
+      button.setAttribute('aria-label', english ? 'Switch website language to Polish' : 'Switch website language to English');
+      button.setAttribute('aria-pressed', english ? 'true' : 'false');
+    });
+    if (english) {
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        const original = node.nodeValue;
+        const trimmed = original.trim();
+        if (translations[trimmed]) node.nodeValue = original.replace(trimmed, translations[trimmed]);
+      }
+      const meta = pageMeta[currentFile()];
+      if (meta) {
+        document.title = meta.title;
+        const description = document.querySelector('meta[name="description"]');
+        if (description) description.setAttribute('content', meta.description);
+      }
+      document.querySelectorAll('meta[property="og:locale"]').forEach(function (meta) { meta.setAttribute('content', 'en_US'); });
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-language-toggle]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        const next = (localStorage.getItem(STORAGE_KEY) || 'pl') === 'en' ? 'pl' : 'en';
+        localStorage.setItem(STORAGE_KEY, next);
+        location.reload();
+      });
+    });
+    applyLanguage(localStorage.getItem(STORAGE_KEY) || 'pl');
+  });
+})();
