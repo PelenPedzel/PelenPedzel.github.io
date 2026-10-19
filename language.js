@@ -207,6 +207,28 @@
   "Muzyka, książki i sztuka": "Music, books and art",
   "Oficjalne informacje o Pełen Pędzel i The 13Th Moon Universe: książka, muzyka, LDS777, twórczość, oficjalne profile i dane projektu. Znajdź Pełen Pędzel w Google i poza stroną autorską.": "Official information about Pełen Pędzel and The 13Th Moon Universe: book, music, LDS777, creative work and official profiles. Find Pełen Pędzel on Google and beyond this website."
 });
+  Object.assign(translations, {
+  "Mapa Galaktyki": "Galaxy Map",
+  "To mapa kierunków, nie katalog rzeczy, które już istnieją. Pokazujemy to, co jest gotowe, oraz zostawiamy miejsce na przyszłe elementy Uniwersum.": "This is a map of directions, not a catalogue of things that already exist. We show what is ready while leaving room for future elements of the Universe.",
+  "OBECNIE": "CURRENTLY",
+  "To już istnieje": "What already exists",
+  "Istniejąca książka i fundament narracyjny projektu.": "The existing book and narrative foundation of the project.",
+  "Działający sklep i materialny wymiar marki.": "An active shop and the material side of the brand.",
+  "Rozwijane Uniwersum, którego kolejne elementy będą powstawały etapami.": "A developing Universe whose next elements will be created in stages.",
+  "Poznaj założenia →": "Explore the concept →",
+  "PRZYSZŁOŚĆ": "THE FUTURE",
+  "Kierunki rozwoju": "Future directions",
+  "Nie udajemy, że te projekty są już gotowe. Są zapisanymi kierunkami, do których wrócimy, kiedy przyjdzie ich czas.": "We do not pretend these projects are already complete. They are future directions we will return to when the time is right.",
+  "Projekt przyszły.": "Future project.",
+  "Wiejski bajarz i świat Wieśniaczych Opowieści są częścią dalszego rozwoju Uniwersum.": "The village storyteller and the world of Wieśniacze Opowieści are part of the Universe’s future development.",
+  "W przygotowaniu": "In development",
+  "Koncepcja.": "Concept.",
+  "Filozoficzna warstwa świata, która na tym etapie nie jest osobnym rozwiniętym projektem.": "A philosophical layer of this world that is not yet a separate, fully developed project.",
+  "Podcast i kolejne formaty": "Podcast and future formats",
+  "Możliwe przyszłe rozszerzenia świata: rozmowy, audio, nowe historie i inne formy twórczości.": "Possible future extensions of the world: conversations, audio, new stories and other forms of creative work.",
+  "Rozwój w przyszłości": "Future development",
+  "Pełen Pędzel · Uniwersum 13th Moon · Damian Dąbrowski": "Pełen Pędzel · 13th Moon Universe · Damian Dąbrowski"
+});
   const pageMeta = {
     'index.html': { title: 'Pełen Pędzel | The 13Th Moon Universe — book, music, LDS777', description: 'The official Pełen Pędzel and The 13Th Moon Universe website. Book, music, LDS777, art and a developing creative world.' },
     'o-mnie.html': { title: 'About me | Pełen Pędzel — Damian Mateusz Dąbrowski', description: 'Meet Damian Mateusz Dąbrowski, creating as Pełen Pędzel. About the creator, his book, music and The 13Th Moon Universe.' },
