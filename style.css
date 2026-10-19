@@ -2,3 +2,9 @@
 /* CTA odbioru bezplatnego e-booka: jasny przycisk i czytelny napis */
 .ebook-form-trigger,.ebook-form-trigger:visited{display:inline-block;background:#fff!important;color:#111!important;border:2px solid #fff!important;font-weight:700!important;opacity:1!important;text-decoration:none!important}
 .ebook-form-trigger:hover,.ebook-form-trigger:focus-visible{background:#eee!important;color:#000!important;border-color:#eee!important;outline:2px solid #fff;outline-offset:3px}
+
+/* Accessible language switcher: responsive on desktop, tablet and mobile. */
+.language-toggle{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border:1px solid #8d754f;border-radius:9px;background:#17130e;color:#f5e5c7;font:700 .82rem/1.2 Arial,Helvetica,sans-serif;cursor:pointer;touch-action:manipulation;white-space:nowrap}
+.language-toggle:hover{background:#2a2116;color:#fff}
+.language-toggle:focus-visible{outline:3px solid #f5e5c7;outline-offset:3px}
+@media(max-width:720px){.nav-links{width:100%;gap:10px 14px}.language-toggle{min-height:44px;padding:10px 14px}}
