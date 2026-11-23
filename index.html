@@ -69,5 +69,10 @@
 </script>
 
 
-<script src="language.js" defer></script></body>
+<script src="language.js" defer></script>
+<script>
+/* Conversion measurement: track outbound intent without collecting personal data. */
+(function(){function category(url){if(url.includes('myspreadshop'))return 'shop_click';if(url.includes('mailerlite'))return 'ebook_request';if(url.includes('distrokid')||url.includes('spotify')||url.includes('soundcloud')||url.includes('music.apple'))return 'music_click';if(url.includes('youtube'))return 'youtube_click';if(url.includes('amazon'))return 'book_click';return 'external_link_click';}document.addEventListener('click',function(e){var a=e.target.closest('a[href]');if(!a)return;var url=a.href;if(!/^https?:/.test(url)||url.indexOf(location.hostname)!==-1)return;var eventName=category(url);if(typeof gtag==='function')gtag('event',eventName,{link_url:url,link_text:(a.textContent||a.getAttribute('aria-label')||'').trim().slice(0,100),page_path:location.pathname,transport_type:'beacon'});});})();
+</script>
+</body>
 </html>
